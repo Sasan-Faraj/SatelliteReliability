@@ -16,7 +16,8 @@ Satellites are becoming integral to functions of many different industries (Bruk
  
 <h2 align="center">Literature Review</h2> 
 The literature on the reliability of literature is limited. Saleh and Castet have built a sizable share of the existing literature on satellite reliability. In their initial analysis in 2009, incorporating Type IV censoring, Saleh and Castet relied on the following parameterization of intensity function: 
-<img src="https://latex.codecogs.com/svg.image?&space;\lambda\left(t\right)&space;=&space;\frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}" title="https://latex.codecogs.com/svg.image? \lambda\left(t\right) = \frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}" />  
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;&space;\lambda\left(t\right)&space;=&space;\frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}" title="https://latex.codecogs.com/svg.image?\inline \lambda\left(t\right) = \frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}" />
 
 . Here, the shape parameter is $`\beta`$ and the scale parameter is $`\frac{1}{\theta}`$. Saleh and Castet assert that $`\hat{\beta}=\ .3875`$ with an average lifetime of  $`\hat{\theta}=8316`$ years, however they do not provide the standard error of the parameters, so it is unclear whether the exponential distribution is not the true distribution here. This analysis is important because it began research into satellite reliability, but it did not account for covariates; rather, it focused the data to different subsystems and looked at the reliability of those subsystems. Saleh and Castet extended this study in the following year by looking at multi-state failure, but the methodology, for the most part, remained the same (2010).
  <br>
