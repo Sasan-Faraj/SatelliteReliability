@@ -15,8 +15,7 @@
  This article leverages the Weibull distribution to fit the distribution of large and medium sized satellite failures, accounting for covariates to be discussed later, on publicly available data. The hope is that this methodology will be intuitive and accessible for non-space industries planning to build analytical infrastructure around satellites. 
  
 <h2 align="center">Literature Review</h2> 
- 
- 	The literature on the reliability of literature is limited. Saleh and Castet have built a sizable share of the existing literature on satellite reliability. In their initial analysis in 2009, incorporating Type IV censoring, Saleh and Castet relied on the following parameterization of intensity function: \lambda\left(t\right)=\frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}. Here, the shape parameter is \beta and the scale parameter is \frac{1}{\theta}. Saleh and Castet assert that \hat{\beta}=\ .3875 with an average lifetime of  \hat{\theta}=8316 years, however they do not provide the standard error of the parameters, so it is unclear whether the exponential distribution is not the true distribution here. This analysis is important because it began research into satellite reliability, but it did not account for covariates; rather, it focused the data to different subsystems and looked at the reliability of those subsystems. Saleh and Castet extended this study in the following year by looking at multi-state failure, but the methodology, for the most part, remained the same (2010).
+ 	The literature on the reliability of literature is limited. Saleh and Castet have built a sizable share of the existing literature on satellite reliability. In their initial analysis in 2009, incorporating Type IV censoring, Saleh and Castet relied on the following parameterization of intensity function: $`\lambda\left(t\right)=\frac{\beta}{\theta}\left(\frac{t}{\theta}\right)^{\beta-1}`$. Here, the shape parameter is $`\beta`$ and the scale parameter is $`\frac{1}{\theta}`$. Saleh and Castet assert that $`\hat{\beta}=\ .3875`$ with an average lifetime of  $`\hat{\theta}=8316`$ years, however they do not provide the standard error of the parameters, so it is unclear whether the exponential distribution is not the true distribution here. This analysis is important because it began research into satellite reliability, but it did not account for covariates; rather, it focused the data to different subsystems and looked at the reliability of those subsystems. Saleh and Castet extended this study in the following year by looking at multi-state failure, but the methodology, for the most part, remained the same (2010).
  <br>
  <br>
  There have been attempts to account for variation within different types of satellites (Guo et al., 2014). However, these attempts treated the variations in satellite type similar to how Saleh and Castet treated different subsystems – by looking at the reliability of those different variations individually from one another and comparing them (Guo et al., 2014; 2010). For instance, Guo et al., focusing on small satellites, compared the reliability of different launch years, mission types, and types of satellites (2014). 
@@ -61,15 +60,33 @@ To minimize potential variation between satellites, the data was specified to on
 
 <h2 align="center">Results</h2> 
  For the results, I will present screenshots of the R output so that users can understand the function calls used to get there as well as graphs for a goodness of fit check. 
-Figure 1: Weibull Fit Summary and Parameter Estimates
+<br>
+<br>
 
- 
+#### Figure 1: Weibull Fit Summary and Parameter Estimates
+<br>
+
+ ![Alt text](Figure1.png)
+ <br>
+<br>
 Figure 2: Shape and Scale 95% Confidence Interval
- 
-Figure 3: Satellite Failure Histogram
- 
- 
-Figure 4:  Weibull Probability Density Plot with MLE Parameters
+<br>
+
+![Alt text](Figure2.png)
+<br>
+<br>
+#### Figure 3: Satellite Failure Histogram
+<br>
+
+![Alt text](Figure3.png)
+<br>
+<br>
+<br>
+
+#### Figure 4:  Weibull Probability Density Plot with MLE Parameters
+![Alt text](Figure4.png)
+<br>
+<br>
  
 <h2 align="center">Discussion</h2> 
 	This study witnesses a high satellite infant mortality, per figure 3 and the shape parameter being less than 1. This result aligns with the studies mentioned earlier, but the shape parameter here is considerably lower than those fitted to the Weibull (Saleh & Castet, 2009; Saleh & Castet, 2010; Guo et al., 2014; Wang & Zhou, 2021). Likewise, those studies are validated here because the 95% confidence interval for the shape parameter does not include 1, meaning with a 95% confidence level, the distribution is not exponential. Unfortunately, due to the choice of using days as the unit of measure rather than years and having a high number of datapoints, the mean lifetime was not tractable to calculate in R. Though from the graphs, once a satellite went up and maintained operational status greater than 3 years, it remained stable in its reliability; however, that second peak in the histogram is partly caused by right censoring. Regardless, it could be the case that this certain distribution is the incorrect fit because of those two clear peals, so Guo et al. could be correct that Weibull assumptions are not met here (2014); however, that is not to say that a non-parametric fit is the best solution, as to be discussed in the conclusion. 
