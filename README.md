@@ -7,11 +7,11 @@
 
 <h2 align="center">Introduction</h2> 
 	Satellites are becoming integral to functions of many different industries (Brukardt, 2022).  On pace to become a $1 trillion industry, satellites have practical uses of analyzing climate change, food security, and national security while also being a part of the agricultural, energy, mining, insurance, and internet services industries (Brukardt, 2022).  The factor tying these industries and how they all use satellites is geographic information systems (GIS), as satellites record a variety of electromagnetic wavebands reflecting from large areas without having to be near that area. 
- <br>
- <br>
+<br>
+<br>
 	Reliability within GIS, though, has not matched the mathematical field of reliability; rather, it has focused on the adequacy of geospatial (Blais, 2002). There has been some satellite reliability analysis that is geared specifically towards the space industry (Saleh & Castet, 2009). This paper will apply reliability analysis to satellites, emphasizing the importance not for the space industry but for industries setting up analysis pipelines dependent on satellites. By having an effective manner of analyzing reliability, these industries can build pipelines, leveraging satellite imagery, and be cognizant of planning around satellite failure. 
- <br>
- <br>
+<br>
+<br>
  This article leverages the Weibull distribution to fit the distribution of large and medium sized satellite failures, accounting for covariates to be discussed later, on publicly available data. The hope is that this methodology will be intuitive and accessible for non-space industries planning to build analytical infrastructure around satellites. 
  
 <h2 align="center">Literature Review</h2> 
